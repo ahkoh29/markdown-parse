@@ -18,7 +18,9 @@ public class MarkdownParse {
             int closeParen = markdown.indexOf(")", openParen);
             if(nextOpenBracket != -1 && nextCloseBracket != -1 && openParen != -1 && closeParen != -1){
                 if(nextOpenBracket == 0 || !markdown.substring(nextOpenBracket - 1, nextOpenBracket).equals("!")){
-                    toReturn.add(markdown.substring(openParen + 1, closeParen));
+                    if(nextCloseBracket == openParen - 1){
+                        toReturn.add(markdown.substring(openParen + 1, closeParen));
+                    }
                 }
             } 
             if(nextOpenBracket == -1){
