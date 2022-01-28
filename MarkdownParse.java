@@ -24,13 +24,8 @@ public class MarkdownParse {
             if(nextOpenBracket == -1){
                 break;
             }
-           /* if(closeParen==-1){
-                break;
-            }
-            */
             currentIndex = closeParen + 1;
         }
-        //System.out.println(currentIndex);
         return toReturn;
     }
     public static void main(String[] args) throws IOException {
